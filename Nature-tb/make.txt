@@ -1,0 +1,53 @@
+=======================
+  U200 software sim:
+=======================
+cd test_kn2row_vitis/sw_emu/
+
+g++ -Wall -g -std=c++11 ../host_x_slr.cpp -o app.exe -I${XILINX_XRT}/include/ -I/tools/Xilinx/Vivado/2020.2/include/ -L/tools/Xilinx/Vivado/2020.2/lib/ -L${XILINX_VIVADO}/lib/ -lOpenCL -lpthread -lrt -lstdc++
+
+emconfigutil --platform xilinx_u200_xdma_201830_2 --nd 1
+
+
+v++ -c -t sw_emu --config ../u200_x_slr.cfg -k top -I../ ../top_entry_perfimprove_newstore.cpp -o top.xo
+
+v++ -l -t sw_emu --config ../u200_x_slr.cfg ./top.xo -o top.xclbin
+
+export XCL_EMULATION_MODE=sw_emu
+
+./app.exe
+
+
+=======================
+  U200 hardware emu:
+=======================
+
+cd ../hw_emu/
+
+g++ -Wall -g -std=c++11 ../host_x_slr.cpp -o app.exe -I${XILINX_XRT}/include/ -I/tools/Xilinx/Vivado/2020.2/include/ -L/tools/Xilinx/Vivado/2020.2/lib/ -L${XILINX_VIVADO}/lib/ -lOpenCL -lpthread -lrt -lstdc++
+
+
+emconfigutil --platform xilinx_u200_xdma_201830_2 --nd 1
+
+
+v++ -c -t hw_emu --config ../u200_x_slr.cfg -k top -I../ ../top_entry_perfimprove_newstore.cpp -o top.xo
+
+v++ -l -t hw_emu --config ../u200_x_slr.cfg ./top.xo -o top.xclbin
+
+export XCL_EMULATION_MODE=hw_emu
+
+./app.exe
+
+
+=======================
+	U200 hardware:
+=======================
+
+cd ../hw
+
+g++ -Wall -g -std=c++11 ../host_x_slr.cpp -o app.exe -I${XILINX_XRT}/include/ -I/tools/Xilinx/Vivado/2020.2/include/ -L/tools/Xilinx/Vivado/2020.2/lib/ -L${XILINX_VIVADO}/lib/ -lOpenCL -lpthread -lrt -lstdc++
+
+v++ -c -t hw --config ../u200_x_slr.cfg -k top -I../ ../top_entry_perfimprove_newstore.cpp -o top.xo
+
+v++ -l -t hw --config ../u200_x_slr.cfg ./top.xo -o top.xclbin
+
+./app.exe
