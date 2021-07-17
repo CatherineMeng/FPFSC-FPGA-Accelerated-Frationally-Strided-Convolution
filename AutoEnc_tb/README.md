@@ -3,7 +3,7 @@ Demonstrating the kn2row acceleration of all the CONV and FSClayers in a convolu
 
 There are five down-sampling and five up-sampling convolution layers with uniform stride of 2 in the generative network of DCGAN.
 
-![Image of auto-encoder](https://github.com/Anonymous-Author-A/FPGA-FSC/blob/main/images/autoencoder.PNG)
+![Image of auto-encoder](https://github.com/CatherineMeng/FPFSC-FPGA-Accelerated-Frationally-Strided-Convolution/blob/main/images/autoencoder.PNG)
 
 ## Software emulation:
 ```

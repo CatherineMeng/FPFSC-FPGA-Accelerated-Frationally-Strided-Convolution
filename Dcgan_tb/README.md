@@ -3,7 +3,7 @@ Demonstrating the kn2row acceleration of the generative DCGAN CONV Layers
 
 There are four upsampling convolution layers with uniform stride of 2 in the generative network of DCGAN.
 
-![Image of generative cnn - dcgan](https://github.com/Anonymous-Author-A/FPGA-FSC/blob/main/images/dcgan.png)
+![Image of generative cnn - dcgan](https://github.com/CatherineMeng/FPFSC-FPGA-Accelerated-Frationally-Strided-Convolution/blob/main/images/dcgan.png)
 
 ## Software emulation:
 ```

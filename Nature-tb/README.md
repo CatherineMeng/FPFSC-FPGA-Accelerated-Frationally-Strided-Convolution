@@ -3,7 +3,7 @@ Demonstrating the kn2row acceleration of Nature-CNN Layers
 
 There are four convolution layers and two FC layers in the Nature-CNN. In the back-propagation stage, only the later three FSC layers are performed to generate feature gradients, which is later used in the weight-update stage to generate kernel gradients.
 
-![Image of nature-CNN](https://github.com/Anonymous-Author-A/FPGA-FSC/blob/main/images/nature_cnn.png)
+![Image of nature-CNN](https://github.com/CatherineMeng/FPFSC-FPGA-Accelerated-Frationally-Strided-Convolution/blob/main/images/nature_cnn.png)
 
 ## Software emulation:
 ```
