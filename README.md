@@ -21,7 +21,7 @@ This repository describes a algorithm-hardware co-designs methodology to avoid t
 Specifically, **we break down each kernel into 1x1 sub-kernels and conduct 1x1 CONV for each of them before aggregating together to get the final output feature maps. This way all zero computation can be naturally avoided while producing the correct result.** The high-level accelerator pipeline is shown below:
 
 <!-- ![Image of arch](https://github.com/Anonymous-Author-A/FPGA-FSC/blob/main/images/arch.png) -->
-<img src="https://github.com/Anonymous-Author-A/FPGA-FSC/blob/main/images/arch.png" alt="drawing" width="500"/>
+<img src="https://github.com/CatherineMeng/FPFSC-FPGA-Accelerated-Frationally-Strided-Convolution/blob/main/images/arch.png" alt="drawing" width="500"/>
 
 ## Software and Hardware Dependencies
 
